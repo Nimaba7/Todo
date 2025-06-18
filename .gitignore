@@ -1,0 +1,8 @@
+# 忽略 node.js 安裝的套件
+node_modules/
+
+# 忽略 IDE 設定
+.idea/
+
+# 其他雜檔
+.DS_Store
