@@ -1,13 +1,13 @@
 body { font-family: sans-serif; padding: 20px; }
 li { margin: 8px 0; }
-h1 {
+.notebook   h1 {
     color: red;
 }
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: start;
+    justify-content: center;
     min-height: 100vh;
     font-family: sans-serif;
     margin: 0;
@@ -16,4 +16,55 @@ body {
 li span {
     margin-left: 0.5em;
     flex: 1;
+}
+.notebook {
+    /* 背景圖（請把 notebook.jpg 放在 public/ 目錄或調整路徑） */
+    background-image: url('notebook.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    /* 讓容器看起來像筆記本的尺寸與樣式 */
+    height: 100vh;
+    width: 600px;
+    margin: 2em auto;       /* 水平置中並在上下留空間 */
+    padding: 2em 1.5em;     /* 內距，讓內容不貼邊 */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 8px;
+
+}
+
+/* 如果想讓背景半透明，讓圖案更明顯： */
+.notebook::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%; transform: translateX(-50%);
+    width: 100%; height: 100%;
+    /*background-image: url('notebook.png');*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    opacity: 0.2;            /* 調整透明度 */
+    z-index: -1;
+}
+
+/* 其他全域樣式就放到 body 或直接針對 .notebook 內元素 */
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+    background: #f7f7f7;    /* 頁面底色 */
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+.notebook-toolbar{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 9px;
 }

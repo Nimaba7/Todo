@@ -69,6 +69,6 @@ async function deleteTodo(id) {
     await fetch(`${api}/${id}`, { method: 'DELETE' });
     loadTodos();
 }
-
+loadTodos();
 
 
